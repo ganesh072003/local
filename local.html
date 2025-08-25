@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice of Heaven - The Best Pizza in Town</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & a display font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Styles for this template -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* A slightly richer dark blue-gray */
+            color: #f3f4f6;
+        }
+        .font-display {
+            font-family: 'Alfa Slab One', cursive;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://placehold.co/1920x1080/000000/ffffff?text=Artisanal+Pizza');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        .menu-card:hover img {
+            transform: scale(1.1);
+        }
+        .menu-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.2), 0 10px 10px -5px rgba(220, 38, 38, 0.1);
+        }
+        .header-scrolled {
+            background-color: rgba(17, 24, 39, 0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .testimonial-card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gallery-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-3xl text-white tracking-wider">
+                Slice<span class="text-red-600">Of</span>Heaven
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-red-500 transition duration-300 font-medium">Home</a>
+                <a href="#menu" class="text-gray-300 hover:text-red-500 transition duration-300 font-medium">Menu</a>
+                <a href="#gallery" class="text-gray-300 hover:text-red-500 transition duration-300 font-medium">Gallery</a>
+                <a href="#about" class="text-gray-300 hover:text-red-500 transition duration-300 font-medium">About</a>
+                <a href="#contact" class="text-gray-300 hover:text-red-500 transition duration-300 font-medium">Contact</a>
+            </nav>
+            <a href="#" class="hidden md:block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105 shadow-lg shadow-red-500/30">
+                Order Now
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-95">
+            <a href="#home" class="block text-center py-3 px-4 text-gray-300 hover:bg-red-600 hover:text-white">Home</a>
+            <a href="#menu" class="block text-center py-3 px-4 text-gray-300 hover:bg-red-600 hover:text-white">Menu</a>
+            <a href="#gallery" class="block text-center py-3 px-4 text-gray-300 hover:bg-red-600 hover:text-white">Gallery</a>
+            <a href="#about" class="block text-center py-3 px-4 text-gray-300 hover:bg-red-600 hover:text-white">About</a>
+            <a href="#contact" class="block text-center py-3 px-4 text-gray-300 hover:bg-red-600 hover:text-white">Contact</a>
+            <a href="#" class="block text-center py-4 px-4 text-lg font-bold bg-red-600 text-white">Order Now</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center">
+            <div class="container mx-auto px-6" data-aos="fade-in" data-aos-delay="200">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display text-white uppercase tracking-wider mb-4 leading-tight">
+                    Crave.<span class="text-red-600"> Eat.</span> Repeat.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+                    Hand-tossed dough, the freshest ingredients, and a passion for perfection. Experience pizza like never before.
+                </p>
+                <a href="#menu" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 text-lg shadow-xl shadow-red-500/40">
+                    Explore Our Menu
+                </a>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display text-center text-white mb-2">Our <span class="text-red-600">Legendary</span> Menu</h2>
+                    <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">Crafted with love, baked to perfection. Each pizza tells a story.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Menu Item 1 -->
+                    <div class="menu-card bg-gray-800 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="overflow-hidden">
+                            <img src="https://i.pinimg.com/736x/27/d4/65/27d46518fe6740e4a3e637ac0766216a.jpg" alt="Margherita Pizza" class="w-full h-60 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-3">Classic Margherita</h3>
+                            <p class="text-gray-400 mb-4 h-20">Fresh mozzarella, San Marzano tomatoes, fresh basil, and a drizzle of olive oil.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-2xl font-display text-red-500">$12.50</div>
+                                <button class="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Item 2 -->
+                    <div class="menu-card bg-gray-800 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                         <div class="overflow-hidden">
+                            <img src="https://i.pinimg.com/736x/3e/c9/fe/3ec9fe32c6217014789b5f42e2343f47.jpg" alt="Pepperoni Pizza" class="w-full h-60 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-3">Pepperoni Powerhouse</h3>
+                            <p class="text-gray-400 mb-4 h-20">Loaded with premium spicy pepperoni, mozzarella, and our signature tomato sauce.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-2xl font-display text-red-500">$14.75</div>
+                                <button class="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Item 3 -->
+                    <div class="menu-card bg-gray-800 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                         <div class="overflow-hidden">
+                            <img src="https://i.pinimg.com/736x/17/b8/79/17b8795da4f9507032ef6e2c10ab90db.jpg" alt="Veggie Pizza" class="w-full h-60 object-cover transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-3">Veggie Supreme</h3>
+                            <p class="text-gray-400 mb-4 h-20">A garden on a crust! Bell peppers, onions, olives, mushrooms, and tomatoes.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-2xl font-display text-red-500">$13.90</div>
+                                <button class="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display text-center text-white mb-2">A <span class="text-red-600">Feast</span> For Your Eyes</h2>
+                    <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">See the passion and quality in every slice.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/736x/47/8e/bd/478ebdd9cbddbfa5442826adb1755d11.jpg" alt=""></div>
+                        <div data-aos="zoom-in" data-aos-delay="100"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://placehold.co/500x500/c70039/ffffff?text=Pizza+2" alt=""></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in" data-aos-delay="200"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/736x/c0/6c/d1/c06cd14b99d0db4c43d6421bad4facaf.jpg" alt=""></div>
+                        <div data-aos="zoom-in" data-aos-delay="300"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/1200x/00/1b/6a/001b6a4093b4b0d8e3bbeade3cb16dc3.jpg" alt=""></div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div data-aos="zoom-in" data-aos-delay="400"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/1200x/19/ba/8a/19ba8a5e300913a60d59dbf0e340dd29.jpg" alt=""></div>
+                        <div data-aos="zoom-in" data-aos-delay="500"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/736x/4b/dd/af/4bddafab10e8423e87df66fa92a7280c.jpg" alt=""></div>
+                    </div>
+                     <div class="grid gap-4">
+                        <div data-aos="zoom-in" data-aos-delay="600"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/736x/a5/67/d0/a567d0ed1773c83badd15d5111d09fe5.jpg" alt=""></div>
+                        <div data-aos="zoom-in" data-aos-delay="700"><img class="gallery-img h-auto max-w-full rounded-lg" src="https://i.pinimg.com/736x/d1/7f/c1/d17fc1632848d2fda9910ea7d5d66d9f.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/2" data-aos="fade-right">
+                        <img src="https://i.pinimg.com/736x/c7/29/c5/c729c5d08631da9f4db243b756c71a56.jpg" alt="Inside the pizzeria" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+                        <h2 class="text-4xl md:text-5xl font-display text-white mb-4">Our <span class="text-red-600">Story</span></h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Since 2010, Slice of Heaven has been more than just a pizzeria; it's a family. We started with a simple dream: to bring authentic, delicious pizza to our community. Using a family recipe passed down through generations, we fire up our ovens every day with the same passion as day one.
+                        </p>
+                        <p class="text-gray-300 font-semibold text-lg">
+                            It's not just food, it's a tradition.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display text-center text-white mb-2">What Our <span class="text-red-600">Customers</span> Say</h2>
+                    <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">We love our customers, and they love us back!</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=JS" class="w-16 h-16 rounded-full mr-4 border-2 border-red-500" alt="Customer Jane Smith">
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Jane Smith</h4>
+                                <div class="text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"Absolutely the best pizza I've had in years. The crust was perfect, and the ingredients were so fresh. A must-try!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=MD" class="w-16 h-16 rounded-full mr-4 border-2 border-red-500" alt="Customer Mike Davis">
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Mike Davis</h4>
+                                <div class="text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"The Pepperoni Powerhouse is my go-to. Fast delivery and consistently delicious. The staff is always friendly too."</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/100x100/e2e8f0/4a5568?text=CW" class="w-16 h-16 rounded-full mr-4 border-2 border-red-500" alt="Customer Chloe Wang">
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Chloe Wang</h4>
+                                <div class="text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"A cozy spot with amazing food. We celebrated a birthday here and it was perfect. Highly recommend the Veggie Supreme!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offer Section -->
+        <section id="offer" class="py-20 bg-red-700 text-white">
+            <div class="container mx-auto px-6 text-center" data-aos="zoom-in">
+                <h2 class="text-4xl md:text-5xl font-display uppercase mb-4">Midweek Madness!</h2>
+                <p class="text-xl mb-8">Get any 2 Large Pizzas for just <span class="font-bold text-4xl">$25</span> every Wednesday!</p>
+                <a href="#" class="bg-white text-red-700 font-bold py-3 px-10 rounded-full transition duration-300 transform hover:scale-105 text-lg shadow-lg">
+                    Claim Offer
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-display text-3xl text-white mb-4">Vidhi<span class="text-red-600">&</span>Ganesh</h3>
+            <p class="mb-6">AT post palasner</p>
+            <div class="flex justify-center space-x-4 md:space-x-6 mb-8">
+                <a href="mailto:contact@sliceofheaven.com" class="hover:text-red-500 transition duration-300">ganeshgole72003@gmail.com<br> itzvidd27@gami.com</a>
+                <span class="text-gray-600">|</span>
+                <a href="tel:+1234567890" class="hover:text-red-500 transition duration-300">(+91)7276752836<br>(+91)9773211453</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2024 Slice of Heaven. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animate on Scroll
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Header scroll effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
